@@ -1,0 +1,28 @@
+{
+	"editor.tabSize": 3,
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": true,
+	"stylelint.enable": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"tailwindCSS.emmetCompletions": true,
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"eslint.enable": true,
+	"volar.completion.preferredTagNameCase": "pascal",
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"emmet.includeLanguages": {
+		"postcss": "css"
+	},
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"cSpell.words": [
+		"composables",
+		"Screendesign",
+		"screendesigns"
+	]
+}

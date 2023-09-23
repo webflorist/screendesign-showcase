@@ -1,0 +1,8 @@
+%default-transition {
+	@apply transition-all duration-500;
+}
+
+%hover-transition {
+	@extend %default-transition;
+	@apply hover:duration-200 group-hover:duration-200;
+}

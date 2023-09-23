@@ -1,0 +1,32 @@
+%btn-general {
+	@extend %hover-transition;
+	@apply inline-flex min-w-[200px] content-center items-center justify-center whitespace-nowrap rounded-lg px-6 py-3 font-medium no-underline hover:no-underline;
+}
+
+%btn-primary {
+	@extend %btn-general;
+	@apply bg-primary text-white hover:bg-neutral-dark hover:text-white;
+}
+
+%btn-secondary {
+	@extend %btn-general;
+	@apply bg-secondary hover:bg-neutral-dark hover:text-white;
+}
+
+@layer components {
+	.btn-primary,
+	button.btn-primary,
+	[type='button'].btn-primary,
+	[type='reset'].btn-primary,
+	[type='submit'].btn-primary {
+		@extend %btn-primary;
+	}
+
+	.btn-secondary,
+	button.btn-secondary,
+	[type='button'].btn-secondary,
+	[type='reset'].btn-secondary,
+	[type='submit'].btn-secondary {
+		@extend %btn-secondary;
+	}
+}

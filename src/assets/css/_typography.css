@@ -1,0 +1,227 @@
+@layer components {
+	.typography {
+		/*
+		Margin between elements
+		-----------------------
+		Use classes
+		'm-default-sm' or
+		'm-default-lg'
+		for div's.
+		*/
+		p,
+		hr,
+		ul,
+		dl,
+		form,
+		table,
+		address,
+		blockquote,
+		section,
+		h1,
+		.h1,
+		h2,
+		.h2,
+		h3,
+		.h3,
+		h4,
+		.h4,
+		h5,
+		.h5,
+		h6,
+		.h6,
+		.m-default-lg,
+		.m-default-sm {
+			& + section,
+			& + .m-default-lg {
+				@apply mt-8 md:mt-16 xl:mt-32;
+			}
+
+			& + p,
+			& + hr,
+			& + ul,
+			& + dl,
+			& + form,
+			& + table,
+			& + address,
+			& + blockquote,
+			& + .m-default-sm {
+				@apply mt-4;
+			}
+
+			& + h1:not(.h2, .h3, .h4, .h5, .h6),
+			& + .h1,
+			& + h2:not(.h1, .h3, .h4, .h5, .h6),
+			& + .h2 {
+				@apply mt-12 md:mt-24 xl:mt-48;
+			}
+
+			& + h3:not(.h1, .h2, .h4, .h5, .h6),
+			& + .h3,
+			& + h4:not(.h1, .h2, .h3, .h5, .h6),
+			& + .h4 {
+				@apply mt-8 md:mt-16 xl:mt-32;
+			}
+
+			& + h5:not(.h1, .h2, .h3, .h4, .h6),
+			& + .h5,
+			& + h6:not(.h1, .h2, .h3, .h4, .h5),
+			& + .h6 {
+				@apply mt-6;
+			}
+		}
+
+		/* Special case for heading following other headings */
+		h1,
+		.h1,
+		h2,
+		.h2,
+		h3,
+		.h3,
+		h4,
+		.h4,
+		h5,
+		.h5,
+		h6,
+		.h6 {
+			& + h1:not(.h2, .h3, .h4, .h5, .h6),
+			& + .h1,
+			& + h2:not(.h1, .h3, .h4, .h5, .h6),
+			& + .h2 {
+				@apply mt-4 md:mt-8 xl:mt-16;
+			}
+
+			& + h3:not(.h1, .h2, .h4, .h5, .h6),
+			& + .h3,
+			& + h4:not(.h1, .h2, .h3, .h5, .h6),
+			& + .h4 {
+				@apply mt-2 md:mt-4 xl:mt-8;
+			}
+
+			& + h5:not(.h1, .h2, .h3, .h4, .h6),
+			& + .h5,
+			& + h6:not(.h1, .h2, .h3, .h4, .h5),
+			& + .h4 {
+				@apply mt-1 md:mt-2 xl:mt-4;
+			}
+		}
+
+		/*
+		Styling of Headings
+		-------------------
+		Apply class to force
+		a style. E.g.:
+		<h1 class="h2">
+		or
+		<div class="h2">
+		*/
+
+		h1:not(.h2, .h3, .h4, .h5, .h6),
+		.h1 {
+			@apply font-display text-4xl font-bold text-primary-dark sm:text-6xl;
+		}
+
+		h2:not(.h1, .h3, .h4, .h5, .h6),
+		.h2 {
+			@apply font-display text-2xl font-bold text-primary-dark sm:text-4xl;
+		}
+
+		h3:not(.h1, .h2, .h4, .h5, .h6),
+		.h3 {
+			@apply font-display text-xl font-bold text-primary-dark sm:text-3xl;
+		}
+
+		h4:not(.h1, .h2, .h3, .h5, .h6),
+		.h4 {
+			@apply font-display text-lg font-normal text-primary-dark sm:text-xl;
+		}
+
+		h5:not(.h1, .h2, .h3, .h4, .h6),
+		.h5 {
+			@apply font-display text-base font-bold sm:text-lg;
+		}
+
+		h6:not(.h1, .h2, .h3, .h4, .h5),
+		.h6 {
+			@apply text-base font-normal sm:text-lg;
+		}
+
+		/*
+			Styling of Links
+			----------------
+			*/
+		a:not(.unstyled, [class*='btn-']), .link {
+			@apply text-primary-dark hover:underline;
+		}
+
+		/*
+		Styling of Lists
+		----------------
+		*/
+		dl:not(.unstyled) {
+			@apply mt-2 grid-cols-2 gap-x-5 gap-y-1 px-5 sm:inline-grid;
+
+			grid-template-columns: auto auto;
+
+			dd + dt {
+				@apply mt-5 sm:mt-0;
+			}
+
+			dt {
+				@apply whitespace-nowrap font-semibold sm:text-right;
+			}
+		}
+
+		ul:not(.unstyled) {
+			@apply pl-10;
+
+			list-style: none;
+
+			li::before {
+				/* Disc variant BEGIN */
+
+				content: '\2022';
+
+				/* Disc variant END */
+
+				/* Square variant BEGIN
+
+				content: '\25A0';
+				font-size: 30%;
+				line-height: 5;
+
+				Square variant END */
+
+				@apply absolute -ml-5 inline-block text-primary-light;
+			}
+
+			li + li {
+				@apply mt-3;
+			}
+
+			ul {
+				@apply mt-1;
+
+				li + li {
+					@apply mt-1;
+				}
+			}
+		}
+
+		/*
+		Styling of Forms
+		----------------
+		*/
+		select {
+			@apply rounded-md py-2 pl-3 pr-10 text-base ring-1 focus:outline-none focus:ring-2 focus:ring-primary-dark sm:text-sm;
+
+			appearance: none;
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+			background-position: right 0.5rem center;
+			background-repeat: no-repeat;
+			background-size: 1.5em 1.5em;
+			padding-right: 2.5rem;
+			-webkit-print-color-adjust: exact;
+			color-adjust: exact;
+		}
+	}
+}

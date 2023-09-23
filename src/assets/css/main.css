@@ -1,0 +1,42 @@
+@import url('./_transitions.css');
+@import url('./_buttons.css');
+@import url('./_typography.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		@apply overflow-x-hidden font-body text-neutral-dark;
+	}
+
+	#app {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		@apply overflow-x-hidden;
+	}
+
+	[class*='hover:'],
+	[class*='group-hover:'] {
+		@extend %hover-transition;
+	}
+}
+
+@layer utilities {
+	.container-padding {
+		@apply px-4 md:px-10;
+	}
+
+	.default-transition {
+		@extend %default-transition;
+	}
+
+	.hover-transition {
+		@extend %hover-transition;
+	}
+}

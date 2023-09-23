@@ -1,0 +1,15 @@
+{
+	"title": "Client Website",
+	"screendesigns": [
+		{
+			"title": "Homepage",
+			"description": "This is the homepage of the website. It contains the most important information about the client and his work. The navigation is on the left side and the content is on the right side. The content is divided into three sections. The first section contains a short description of the client and his work. The second section contains a gallery of the latest pictures. The third section contains a contact form.",
+			"image": "home.jpg"
+		},
+		{
+			"title": "Projects",
+			"description": "This page shows an overview of all projects. The projects are divided into three categories. The categories are shown in the navigation on the left side. The content is on the right side. The content is divided into three sections. The first section contains a short description of the category. The second section contains a gallery of the latest pictures of the category. The third section contains a list of all projects of the category. The list contains the name of the project and a short description. The list is sorted by date. The newest project is on top of the list.",
+			"image": "projects.jpg"
+		}
+	]
+}
