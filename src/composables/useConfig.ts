@@ -17,7 +17,7 @@ const error = ref<Error>(null)
 const currentScreendesignIndex = ref(0)
 
 export function useConfig() {
-	fetch('/screendesigns/config.json')
+	fetch('./screendesigns/config.json')
 		.then((res) => res.json())
 		.then((json: Config) => {
 			config.value = json
