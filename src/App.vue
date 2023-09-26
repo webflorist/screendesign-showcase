@@ -1,4 +1,4 @@
-<script async setup lang="ts">
+<script setup lang="ts">
 import PageHeader from './components/page/PageHeader.vue'
 import PageFooter from './components/page/PageFooter.vue'
 import AlertMessage from './components/AlertMessage.vue'
@@ -36,9 +36,7 @@ const { currentScreendesign, currentScreendesignIndex, screendesigns, error } = 
 			<p v-if="currentScreendesign?.description" class="m-default-sm text-center text-sm">
 				{{ currentScreendesign.description }}
 			</p>
-			<MonitorContainer class="m-default-sm">
-				<img :src="'/screendesigns/' + currentScreendesign?.image" alt="Screen Design" />
-			</MonitorContainer>
+			<MonitorContainer class="m-default-sm" />
 		</template>
 	</main>
 
